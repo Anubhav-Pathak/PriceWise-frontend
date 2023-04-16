@@ -1,14 +1,39 @@
-import React from "react";
-import styled from "styled-components"
+import React, { useState } from 'react';
 
-// More about Styled components in - https://styled-components.com/
+function ImageUploader() {
+  const [selectedImages, setSelectedImages] = useState([]);
 
-const styledButton = styled.button`
+  const handleImageUpload = (event) => {
+    const files = event.target.files;
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
 
-`;
+    
+    const filteredFiles = Object.values(files).filter((file) =>
+      allowedTypes.includes(file.type)
+    );
 
-const Button = (props) => {
-    <styledButton>{props.text}</styledButton>
+    setSelectedImages((prevSelectedImages) => [
+      ...prevSelectedImages,
+      ...filteredFiles,
+    ]);
+  };
+
+  return (
+    <div>
+      <input
+        type="file"
+        accept=".jpg,.jpeg,.png"
+        multiple
+        onChange={handleImageUpload}
+      />
+         <button onClick={handleUpload}>Upload</button>
+      <ul>
+        {selectedImages.map((image, index) => (
+          <li key={index}>{image.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default Button;
+export default ImageUploader;
