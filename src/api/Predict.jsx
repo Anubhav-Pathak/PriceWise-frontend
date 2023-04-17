@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
+import UserContext from '../context/UserContext';
 
 const Predict = () => {
 
-    
+    const ctxUser = useContext(UserContext);
 
     useEffect(async () => {
         try {
             const response = await fetch(`${baseURL}/predict`, {})
             if (!response.ok()) throw Error("OOPS! Something went wrong !")
-            const data = await response.data();
-            
+            ctxUser.damages = await response.data();
         }
         catch{
-
+            
         }
 
     }, [])
