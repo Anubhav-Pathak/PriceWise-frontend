@@ -2,9 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
+import { DamageContextProvider } from "./context/DamageContext";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <DamageContextProvider>
+      <App />
+    </DamageContextProvider>
   </React.StrictMode>,
 )
+ 
