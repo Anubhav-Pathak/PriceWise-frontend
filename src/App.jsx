@@ -4,6 +4,7 @@ import Appbar from './components/Landing/appbar';
 import Footer from './components/Landing/f';
 import Modal from './ui/Modal';
 
+import Uploader from './components/Landing/Uploader';
 function App() {
 
   const [showModal, setShowModal] = useState(false);
@@ -18,7 +19,9 @@ function App() {
           <button onClick={() => setShowModal(!showModal)}>Predict</button>
         </div>
       </main>
+      <Uploader/>
       <Footer/>
+      
     </>
   )
 }
