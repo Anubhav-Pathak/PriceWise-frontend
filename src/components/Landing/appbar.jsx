@@ -5,10 +5,7 @@ function Appbar() {
     <>
         <nav className="bg-white dark:bg-purple-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-purple-600">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="https://flowbite.com/" className="flex items-center">
-                    <img src="https://img.icons8.com/ios/50/null/car--v1.png" className="h-8 mr-3" alt="Flowbite Logo"/>
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PriceWise</span>
-                </a>
+                <a href="https://flowbite.com/" className="flex items-center"><img src="https://img.icons8.com/ios/50/null/car--v1.png" className="h-8 mr-3" alt="Logo"/> <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PriceWise</span> </a>
                 <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                     <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-purple-800 md:dark:bg-purple-900 dark:border-gray-700">
                     <li>

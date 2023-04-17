@@ -22,7 +22,7 @@ const Modal = (props) => {
   return (
     <>
       {createPortal(<Backdrop />, document.getElementById("backdrop"))}
-      {createPortal(<Overlay setShowModal={props.setShowModal} />, document.getElementById("overlay"))}
+      {createPortal(<Overlay setShowModal={props.setShowModal} children={props.children}/>, document.getElementById("overlay"))}
     </>
   );
 };
