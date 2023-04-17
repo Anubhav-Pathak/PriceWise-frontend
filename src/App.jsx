@@ -4,6 +4,7 @@ import Appbar from './components/Landing/appbar';
 import Footer from './components/Landing/f';
 import Modal from './ui/Modal';
 import Form from './components/Form/Form';
+import About from './components/Landing/About';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <>
     {showModal && <Modal setShowModal={setShowModal}><Form /></Modal>}
       <Appbar/>
+      {/* <About/> */}
       <main>
         <div className="App">
           <h1 className='text-4xl text-green-300'>Price-Wise FrontEnd Template</h1>
