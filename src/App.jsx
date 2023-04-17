@@ -3,16 +3,16 @@ import React, {useState} from 'react';
 import Appbar from './components/Landing/appbar';
 import Footer from './components/Landing/f';
 import Modal from './ui/Modal';
+import Form from './components/Form/Form';
 import About from './components/Landing/About';
 
-import Uploader from './components/Landing/Uploader';
 function App() {
 
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-    {showModal && <Modal setShowModal={setShowModal}><Uploader /></Modal>}
+    {showModal && <Modal setShowModal={setShowModal}><Form /></Modal>}
       <Appbar/>
       {/* <About/> */}
       <main>
