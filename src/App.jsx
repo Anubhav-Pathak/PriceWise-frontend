@@ -14,12 +14,11 @@ function App() {
     <>
     {showModal && <Modal setShowModal={setShowModal}><Form /></Modal>}
       <Appbar/>
-      {/* <About/> */}
-      <main>
-        <div className="App">
-          <button onClick={() => setShowModal(!showModal)} className='px-4 py-2 bg-purple-600'>Predict</button>
-        </div>
-      </main>
+      <div className="App text-white flex flex-col items-center justify-center gap-4">
+        <h1 className='text-4xl font-bold'>Car Price Prediction</h1>
+        <p className='text-xl'>Predict the price of your car</p>
+        <button onClick={() => setShowModal(!showModal)} className='px-4 py-2 bg-purple-500 w-52 mt-8 rounded hover:bg-purple-700'>Predict</button>
+      </div>
       <Footer/>
       
     </>
