@@ -23,7 +23,7 @@ const Input = React.forwardRef((props, ref) => {
   return (
     <StyledInput>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input ref={ref} {...props.input}/>
+      <input ref={ref} {...props.input} required/>
     </StyledInput>
   )
 });

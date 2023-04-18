@@ -1,7 +1,8 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useContext, useEffect, useRef, useState} from 'react'
 import { FileUploader } from "react-drag-drop-files";
 import Input from "../../ui/Input";
 import Spinner from "../../ui/Spinner";
+import UserContext from '../../context/UserContext';
 
 const fileTypes = ["JPG", "PNG", "JPEG"];
 const baseURL = "http://127.0.0.1:5000";
@@ -18,13 +19,15 @@ const Form = () => {
   const priceRef = useRef();
   const [file, setFile] = useState();
 
+  const contextUser = useContext(UserContext);
+
   const handleChange = (fileData) => {
     setFile(fileData);
   };
 
   const submitHandler = async (event) => {
     event.preventDefault();
-    setLoad(false);
+    setLoad(true);
     let form = new FormData();
     for (let i of file) form.append("files", i);
     form.append("manufacturing", manufacturingRef.current.value);
@@ -36,8 +39,14 @@ const Form = () => {
       });
       if(!response.ok) throw Error("Oops ! Something Went Wrong !")
       const data = await response.json();
-      console.log(data);
-
+      contextUser.setPrice(data);
+      contextUser.setUser({
+        name: nameRef.current.value,
+        model: modelRef.current.value,
+        carNumber: carNumberRef.current.value,
+        manufacturing: manufacturingRef.current.value,
+        price: priceRef.current.value,
+      });
     }
     catch (error){
       console.log(error);
