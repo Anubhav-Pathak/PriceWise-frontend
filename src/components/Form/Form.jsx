@@ -35,6 +35,7 @@ const Form = () => {
       carNumber: carNumberRef.current.value,
       manufacturing: manufacturingRef.current.value,
       price: priceRef.current.value,
+      policy: Math.random().toString().substring(2, 9),
     });
     let form = new FormData();
     for (let i of file) form.append("files", i);
@@ -58,7 +59,7 @@ const Form = () => {
   }
 
   const generatePDF = async () => {
-
+    setPDF(true);
     const response = await fetch(`${baseURL}/pdf`, {
       method:"POST",
       body: JSON.stringify({
