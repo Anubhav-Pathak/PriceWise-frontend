@@ -19,6 +19,9 @@ function App() {
         <p className='text-xl'>Predict the price of your car</p>
         <button onClick={() => setShowModal(!showModal)} className='px-4 py-2 bg-purple-500 w-52 mt-8 rounded hover:bg-purple-700'>Predict</button>
       </div>
+      <section>
+        <About/>
+      </section>
       <Footer/>
       
     </>
