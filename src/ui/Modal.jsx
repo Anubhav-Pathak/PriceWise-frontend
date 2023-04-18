@@ -11,8 +11,8 @@ const Overlay = (props) => {
     props.setShowModal(false);
   };
   return (
-    <div className={`${styles.scroll} overflow-y-scroll max-w-7xl w-3/4 h-5/6 p-4 bg-white border-2 rounded fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50`}>
-        <button className="fixed top-0 right-0 px-2 bg-purple-600 text-3xl" onClick={closeClickHandler} > X </button>
+    <div className={`${styles.scroll} overflow-y-scroll max-w-7xl w-3/4 h-5/6 p-6 bg-white border-2 rounded fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50`}>
+        <button className="fixed top-0 right-0 px-2 bg-purple-600 text-2xl" onClick={closeClickHandler} > X </button>
         {props.children}
     </div>
   )

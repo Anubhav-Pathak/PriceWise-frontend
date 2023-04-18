@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
 
 const UserContext = React.createContext({
-    damages: {},
+    user: {},
     setDamages: () => {}
 });
 
 export const UserContextProvider = (props) => {
-  const [damages, setDamages] = useState({});
+  const [user, setUser] = useState({});
   return(
-    <UserContext.Provider value={{damages: damages, setDamages: setDamages}}>
+    <UserContext.Provider value={{user: user}}>
         {props.children}
     </UserContext.Provider>
   )
